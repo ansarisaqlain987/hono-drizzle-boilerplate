@@ -1,6 +1,7 @@
 import { zValidator } from '@hono/zod-validator'
+import { ZodSchema } from 'zod';
 
-export const zodValidator = (schema: any) => zValidator('json', schema, (result, c) => {
+export const zodValidator = (schema: ZodSchema) => zValidator('json', schema, (result, c) => {
     if (!result.success) {
         return c.json({
             data: null,

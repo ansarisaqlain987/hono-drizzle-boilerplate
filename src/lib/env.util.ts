@@ -13,3 +13,11 @@ export const parseNumberFromEnvironment = (val: string | undefined, defaultValue
         return defaultValue
     }
 }
+
+export const checkSecretOrThrowError = (varName: string) => {
+    const obj = Bun.env;
+    if(!obj[varName]){
+        throw new Error(`Environment Variable ${varName} is missing`)
+    }
+    return obj[varName];
+}

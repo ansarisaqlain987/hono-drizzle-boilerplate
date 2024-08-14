@@ -1,7 +1,8 @@
 import { bodyLimit } from 'hono/body-limit'
+import { parseNumberFromEnvironment } from '../lib/env.util';
 
 export const bodyLimitMiddleware = bodyLimit({
-    maxSize: 1024 * 1024,
+    maxSize: parseNumberFromEnvironment(Bun.env.BODY_LIMIT, 50*1024),
     onError: (c) => {
         return c.json({
             error: ['Request body limit exceeded']

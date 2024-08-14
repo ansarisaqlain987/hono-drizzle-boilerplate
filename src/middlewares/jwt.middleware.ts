@@ -1,5 +1,4 @@
 import { jwt } from 'hono/jwt'
+import { JwtConfig } from '../config/jwt.config'
 
-export const jwtMiddleware = jwt({
-    secret: 'some-secret'
-})
+export const jwtMiddleware = jwt(JwtConfig)

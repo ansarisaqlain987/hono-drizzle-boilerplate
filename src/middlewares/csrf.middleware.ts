@@ -1,5 +1,4 @@
 import { csrf } from 'hono/csrf'
+import { CsrfConfig } from '../config/csrf.config'
 
-export const csrfMiddleware = csrf({
-    origin: ['myapp.example.com', 'development.myapp.example.com'],
-})
+export const csrfMiddleware = csrf(CsrfConfig)
