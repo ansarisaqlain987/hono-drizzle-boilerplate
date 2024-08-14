@@ -1,12 +1,10 @@
-const getArrayFromString = (value: string | undefined) => {
-    return  value?.split(',') ?? ['*'];
-}
+import { parseArrayFromEnvironment, parseNumberFromEnvironment } from "../lib/env.util";
 
-const OriginConfig = {
-    origin: getArrayFromString(Bun.env.ALLOWED_ORIGINS),
-    allowHeaders: ['X-Custom-Header', 'Upgrade-Insecure-Requests'],
-    allowMethods: ['POST', 'GET', 'OPTIONS'],
-    exposeHeaders: ['Content-Length', 'X-Kuma-Revision'],
-    maxAge: 600,
+export const OriginConfig = {
+    origin: parseArrayFromEnvironment(Bun.env.ALLOWED_ORIGINS, ['*']),
+    allowHeaders: parseArrayFromEnvironment(Bun.env.ALLOWED_HEADERS, ['*']),
+    allowMethods: parseArrayFromEnvironment(Bun.env.ALLOWED_METHODS, ['*']),
+    exposeHeaders: parseArrayFromEnvironment(Bun.env.EXPOSED_HEADERS),
+    maxAge: parseNumberFromEnvironment(Bun.env.EXPOSED_HEADERS, 600),
     credentials: true,
 }
