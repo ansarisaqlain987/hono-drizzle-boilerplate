@@ -13,7 +13,7 @@ app.use(timing())
 app.use(requestId())
 app.use(logger())
 
-app.route('/users', users)
+app.route('/user', users)
 
 app.notFound((c) => {
   return c.json({
