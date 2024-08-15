@@ -1,7 +1,10 @@
 {
   "name": "hono-drizzle-boilerplate",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "migrate:make": "bunx knex migrate:make -x ts",
+    "migrate:latest": "bunx knex migrate:latest",
+    "migrate:down": "bunx knex migrate:down"
   },
   "dependencies": {
     "@hono/swagger-ui": "^0.4.0",
@@ -9,6 +12,8 @@
     "@hono/zod-validator": "^0.2.2",
     "drizzle-orm": "^0.33.0",
     "hono": "^4.5.5",
+    "knex": "^3.1.0",
+    "pg": "^8.12.0",
     "postgres": "^3.4.4"
   },
   "devDependencies": {
