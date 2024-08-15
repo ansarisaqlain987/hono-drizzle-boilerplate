@@ -33,7 +33,7 @@ ___
 ## How To?
 
 ### Application setup:
-```gql
+```bash
 # to install the dependency
 bun install
 
@@ -43,7 +43,7 @@ bun dev
 
 ### Handling migrations:
 
-```gql
+```bash
 # to create migration
 # migration will be created in the '/src/db/migration' directory
 bun migrate:make your_migration_name
