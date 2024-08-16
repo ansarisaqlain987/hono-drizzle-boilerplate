@@ -18,15 +18,14 @@ ___
 
 ## Components
 
-The boilerplate includes following:
-- Hono 
+<b>The boilerplate includes following:</b>
+- Hono as framework
 - Typescript
-- Drizzle
-- Knex
+- Drizzle as ORM with PostgreSQL
+- Knex as migration client
 
-Future enhancements:
+<b>Future enhancements:</b>
 - ESLint Addition
-- Multi-Database support
 
 ___
 
@@ -54,4 +53,9 @@ bun migrate:latest
 # to rollback previous migration
 bun migrate:down
 ```
+`NOTE: This boilerplate does not support rolling back each and every migrations with a single command`
+
+### Drizzle Schemas
+All the schemas are written in a single file for ease of convinience. Location of the schema file is `src/db/schema.ts`. These schema can be further customized or splitted into multiple files and folders according to the need. 
+
 
