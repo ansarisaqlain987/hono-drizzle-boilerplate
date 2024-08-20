@@ -1,4 +1,4 @@
-import { cors } from 'hono/cors'
-import { OriginConfig } from '../config/cors.config'
+import { cors } from "hono/cors";
+import { OriginConfig } from "../config/cors.config";
 
-export const corsMiddleware = cors(OriginConfig)
+export const corsMiddleware = cors(OriginConfig);

@@ -1,6 +1,4 @@
-import { StatusCode } from "hono/utils/http-status";
-
-export type AppResponse<T=any, E=any[]> = {
-    data: T;
-    error: E;
-}
+export type AppResponse<T = unknown, E = unknown[]> = {
+  data: T;
+  error: E;
+};

@@ -1,4 +1,4 @@
-import { csrf } from 'hono/csrf'
-import { CsrfConfig } from '../config/csrf.config'
+import { csrf } from "hono/csrf";
+import { CsrfConfig } from "../config/csrf.config";
 
-export const csrfMiddleware = csrf(CsrfConfig)
+export const csrfMiddleware = csrf(CsrfConfig);

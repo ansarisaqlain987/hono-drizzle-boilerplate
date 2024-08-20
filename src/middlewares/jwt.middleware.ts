@@ -1,4 +1,4 @@
-import { jwt } from 'hono/jwt'
-import { JwtConfig } from '../config/jwt.config'
+import { jwt } from "hono/jwt";
+import { JwtConfig } from "../config/jwt.config";
 
-export const jwtMiddleware = jwt(JwtConfig)
+export const jwtMiddleware = jwt(JwtConfig);
